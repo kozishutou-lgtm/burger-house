@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メニュー | BURGER HOUSE（バーガーハウス）</title>
+  <meta name="description" content="BURGER HOUSEのメニュー一覧。手作りハンバーガー・キッズセット・牛すじ煮込みなど。季節限定バーガーも随時登場。テイクアウト・デリバリー対応。">
+  <link rel="canonical" href="https://www.burger-house-3.com/menu">
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.burger-house-3.com/menu">
+  <meta property="og:title" content="メニュー | BURGER HOUSE（バーガーハウス）">
+  <meta property="og:description" content="BURGER HOUSEのメニュー一覧。手作りハンバーガー・キッズセット・牛すじ煮込みなど。季節限定バーガーも随時登場。テイクアウト・デリバリー対応。">
+  <meta property="og:image" content="https://www.burger-house-3.com/grand_menu.jpg">
+  <meta property="og:site_name" content="BURGER HOUSE（バーガーハウス）">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Pacifico&family=Noto+Sans+JP:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream:#FDF6E9; --sand:#F0E0C0; --orange:#E8650A; --orange2:#F28A3C;
+      --wood:#8B5E3C; --dark:#2D1A0E; --brown:#4A2C1A; --sage:#7A8C6E;
+      --white:#FFFDF8; --text:#3A2010;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--cream); color:var(--text); font-family:'DM Sans','Noto Sans JP',sans-serif; overflow-x:hidden; }
+
+    header { position:fixed; top:0; left:0; right:0; z-index:200; background:var(--dark); border-bottom:3px solid var(--orange); display:flex; align-items:center; justify-content:space-between; padding:0 40px; height:66px; }
+    .logo-wrap { display:flex; align-items:center; gap:14px; text-decoration:none; }
+    .logo-icon { width:42px; height:42px; background:var(--orange); border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; transform:rotate(-3deg); }
+    .logo-icon-bun { width:28px; height:6px; background:var(--cream); border-radius:4px 4px 0 0; }
+    .logo-icon-meat { width:28px; height:5px; background:var(--brown); border-radius:1px; }
+    .logo-icon-bun2 { width:28px; height:5px; background:#D4956A; border-radius:0 0 4px 4px; }
+    .logo-name { font-family:'Righteous',sans-serif; font-size:24px; color:var(--cream); letter-spacing:1px; line-height:1; }
+    .logo-name span { color:var(--orange2); }
+    .logo-sub { font-size:10px; letter-spacing:3px; color:rgba(253,246,233,0.5); font-weight:500; }
+    nav { display:flex; gap:32px; align-items:center; }
+    nav a { font-weight:700; font-size:13px; letter-spacing:1.5px; text-decoration:none; color:rgba(253,246,233,0.75); text-transform:uppercase; padding:4px 0; position:relative; transition:color 0.2s; }
+    nav a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--orange2); transition:width 0.3s; }
+    nav a:hover { color:var(--cream); } nav a:hover::after, nav a.active::after { width:100%; } nav a.active { color:var(--orange2); }
+    .menu-toggle { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .menu-toggle span { display:block; width:24px; height:2px; background:var(--cream); }
+
+    /* PAGE HERO */
+    .page-hero { margin-top:66px; background:var(--dark); padding:60px 40px; text-align:center; position:relative; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(-45deg,transparent,transparent 12px,rgba(232,101,10,0.04) 12px,rgba(232,101,10,0.04) 13px); }
+    .page-hero-inner { position:relative; }
+    .page-hero-tag { display:inline-block; background:var(--orange); color:var(--white); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; padding:6px 16px; border-radius:2px; margin-bottom:16px; }
+    .page-hero-title { font-family:'Righteous',sans-serif; font-size:clamp(40px,8vw,80px); color:var(--white); letter-spacing:2px; }
+
+    /* BODY */
+    .menu-body { max-width:980px; margin:0 auto; padding:64px 40px; }
+
+    .intro-card {
+      background:var(--sand); border-radius:8px; padding:28px 36px;
+      margin-bottom:56px; text-align:center;
+      border-left:4px solid var(--orange);
+      box-shadow:0 4px 20px rgba(45,26,14,0.08);
+    }
+    .intro-card p { font-family:'Pacifico',cursive; font-size:16px; color:var(--brown); line-height:2; }
+
+    /* grand menu */
+    .grand-wrap {
+      border-radius:10px; overflow:hidden;
+      box-shadow:0 12px 40px rgba(45,26,14,0.18);
+      margin-bottom:48px;
+    }
+    .grand-header {
+      background:var(--orange); padding:18px 28px;
+      display:flex; align-items:center; gap:14px;
+    }
+    .grand-header h2 { font-family:'Righteous',sans-serif; font-size:22px; color:var(--white); letter-spacing:2px; }
+    .grand-header-badge { background:var(--dark); color:var(--orange2); font-size:10px; font-weight:700; letter-spacing:2px; padding:4px 12px; border-radius:3px; }
+    .grand-img { width:100%; display:block; }
+
+    /* sub grid */
+    .sub-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .sub-card { border-radius:8px; overflow:hidden; box-shadow:0 6px 24px rgba(45,26,14,0.1); background:var(--white); }
+    .sub-card img { width:100%; display:block; }
+    .sub-card-cap { padding:20px 22px; border-top:3px solid var(--orange); }
+    .sub-card-cap h3 { font-weight:700; font-size:16px; color:var(--dark); margin-bottom:6px; }
+    .sub-card-cap p { font-size:13px; line-height:1.7; color:var(--brown); opacity:0.8; }
+
+    /* SEASONAL */
+    .seasonal-section { position:relative; padding:64px 40px; text-align:center; }
+    .seasonal-section::before { content:''; position:absolute; inset:0; background-color:var(--wood); background-image:repeating-linear-gradient(90deg,transparent 0px,transparent 2px,rgba(0,0,0,0.04) 2px,rgba(0,0,0,0.04) 4px),repeating-linear-gradient(180deg,transparent 0px,transparent 6px,rgba(255,255,255,0.03) 6px,rgba(255,255,255,0.03) 7px); }
+    .seasonal-inner { position:relative; z-index:1; }
+    .seasonal-label { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:rgba(253,246,233,0.7); margin-bottom:10px; }
+    .seasonal-title { font-family:'Righteous',sans-serif; font-size:clamp(26px,4vw,40px); color:var(--cream); margin-bottom:32px; }
+    .seasonal-cards { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; max-width:760px; margin:0 auto; }
+    .seasonal-card { background:var(--cream); padding:32px 28px; border-radius:6px; min-width:240px; border-top:4px solid var(--orange); box-shadow:0 8px 32px rgba(0,0,0,0.2); }
+    .seasonal-card-badge { display:inline-block; background:var(--sage); color:var(--white); font-size:9px; font-weight:700; letter-spacing:2px; padding:3px 10px; border-radius:2px; margin-bottom:12px; }
+    .seasonal-card h3 { font-weight:700; font-size:16px; color:var(--dark); margin-bottom:8px; }
+    .seasonal-card .price { font-family:'Righteous',sans-serif; font-size:30px; color:var(--orange); margin-bottom:10px; }
+    .seasonal-card p { font-size:13px; line-height:1.7; color:var(--brown); }
+
+    footer { background:var(--dark); border-top:3px solid var(--orange); padding:56px 40px 36px; text-align:center; }
+    .footer-logo { font-family:'Righteous',sans-serif; font-size:32px; color:var(--cream); letter-spacing:2px; margin-bottom:6px; }
+    .footer-logo span { color:var(--orange2); }
+    .footer-tagline { font-family:'Pacifico',cursive; font-size:14px; color:rgba(232,101,10,0.7); margin-bottom:28px; }
+    .footer-line { width:48px; height:2px; background:var(--orange); margin:0 auto 24px; }
+    .footer-info { font-size:13px; line-height:2.2; color:rgba(240,224,192,0.6); margin-bottom:28px; }
+    .footer-info a { color:inherit; }
+    .footer-copy { font-size:11px; letter-spacing:2px; color:rgba(240,224,192,0.25); text-transform:uppercase; }
+
+    @media (max-width:700px) {
+      header { padding:0 20px; }
+      .menu-toggle { display:flex; }
+      nav { display:none; position:absolute; top:66px; left:0; right:0; background:var(--dark); flex-direction:column; padding:28px 24px; gap:24px; border-bottom:3px solid var(--orange); }
+      nav.open { display:flex; }
+      .menu-body { padding:48px 20px; }
+      .sub-grid { grid-template-columns:1fr; }
+      .seasonal-section { padding:48px 20px; }
+      footer { padding:48px 20px 32px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-icon"><div class="logo-icon-bun"></div><div class="logo-icon-meat"></div><div class="logo-icon-bun2"></div></div>
+      <div><div class="logo-name">BURGER <span>HOUSE</span></div><div class="logo-sub">バーガーハウス · 桐生</div></div>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="access.html">Access</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="page-hero-tag">Our Menu</span>
+      <h1 class="page-hero-title">MENU</h1>
+    </div>
+  </div>
+
+  <div class="menu-body">
+    <div class="intro-card">
+      <p>素材にこだわり、ひとつひとつ丁寧に手作りしています🍔<br>テイクアウト・デリバリーもご利用いただけます！</p>
+    </div>
+
+    <div class="grand-wrap">
+      <div class="grand-header">
+        <h2>GRAND MENU</h2>
+        <span class="grand-header-badge">全メニュー掲載</span>
+      </div>
+      <div style="position:relative; cursor:zoom-in;" onclick="document.getElementById('lightbox').style.display='flex'">
+        <img class="grand-img" src="grand_menu.jpg" alt="グランドメニュー">
+        <div style="position:absolute;bottom:14px;right:14px;background:rgba(45,26,14,0.7);color:#FDF6E9;font-size:12px;font-weight:700;letter-spacing:1px;padding:7px 14px;border-radius:4px;pointer-events:none;">
+          🔍 タップして拡大
+        </div>
+      </div>
+    </div>
+
+  <!-- ライトボックス -->
+  <div id="lightbox" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:16px;cursor:zoom-out;">
+    <img src="grand_menu.jpg" alt="グランドメニュー拡大" style="max-width:100%;max-height:100vh;object-fit:contain;border-radius:4px;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+    <div style="position:absolute;top:20px;right:24px;color:#fff;font-size:28px;cursor:pointer;line-height:1;opacity:0.8;">✕</div>
+  </div>
+
+    <div class="sub-grid">
+      <div class="sub-card">
+        <img src="kids_set.jpg" alt="キッズバーガーセット">
+        <div class="sub-card-cap">
+          <h3>キッズバーガーセット 🐣</h3>
+          <p>バンズ・パティ・ケチャップのシンプルな作り。はじめての本格バーガーデビューにぴったり！フライドポテト・ブロッコリー・ゼリー・ジュース付き。小学生以下のお子様対象（店内のみ）。</p>
+        </div>
+      </div>
+      <div class="sub-card">
+        <img src="https://static.wixstatic.com/media/781bfc_b4349201281445d0bd522685368e1278~mv2.jpg/v1/crop/x_33,y_115,w_1137,h_1521/fill/w_760,h_1015,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%E3%83%AC%E3%83%A2%E3%83%8D%E3%83%BC%E3%83%89.jpg" alt="ドリンク">
+        <div class="sub-card-cap">
+          <h3>ドリンク</h3>
+          <p>自家製レモネード・レモネードソーダ、コーヒー、ビール、ハイボールなどバーガーに合うドリンクを豊富にご用意しています。</p>
+        </div>
+      </div>
+      <div class="sub-card">
+        <img src="https://static.wixstatic.com/media/781bfc_d2a6db3cfbd1463dacbd4f2436fdf208~mv2.png/v1/fill/w_1000,h_1415,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/A4%20(8).png" alt="牛すじ煮込み">
+        <div class="sub-card-cap">
+          <h3>牛すじ煮込み 🍲</h3>
+          <p>バーガー屋が本気で作った新名物。単品（1人前）¥650 ／ ほろ酔いセット ¥1,100（ビールまたはハイボール＋牛すじ煮込み）。お土産用（冷蔵）もご用意しています。2人前¥1,200でお得！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seasonal-section">
+    <div class="seasonal-inner">
+      <p class="seasonal-label">Limited Menu</p>
+      <h2 class="seasonal-title">4月の限定バーガー 🌸</h2>
+      <div class="seasonal-cards">
+        <div class="seasonal-card">
+          <img src="teriyaki_egg.jpg" alt="テリヤキエッグバーガー" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;border-radius:6px 6px 0 0;">
+          <div style="padding:20px 20px 24px;">
+            <span class="seasonal-card-badge">4/29 まで</span>
+            <h3>テリヤキエッグバーガー</h3>
+            <p class="price">¥1,340</p>
+            <p>自家製テリヤキソースと半熟たまごの絶品コンビ。毎年大人気の春の名物バーガーです🌸</p>
+          </div>
+        </div>
+        <div class="seasonal-card">
+          <img src="teriyaki_bacon_egg.jpg" alt="テリヤキベーコンエッグバーガー" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;border-radius:6px 6px 0 0;">
+          <div style="padding:20px 20px 24px;">
+            <span class="seasonal-card-badge">4/29 まで</span>
+            <h3>テリヤキベーコンエッグバーガー</h3>
+            <p class="price">¥1,540</p>
+            <p>ベーコンがプラスされてボリューム満点。テイクアウトにもぜひ！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">BURGER <span>HOUSE</span></div>
+    <p class="footer-tagline">夫婦で切り盛りする、小さなバーガー屋さん</p>
+    <div class="footer-line"></div>
+    <div class="footer-info">
+      群馬県桐生市末広町3‐12<br>
+      TEL: <a href="tel:07023736614">070-2373-6614</a>　／　<a href="https://www.instagram.com/burger_house3" target="_blank">@burger_house3</a><br>
+      ランチ 11:00–15:30（L.O. 15:00）　／　ディナー 17:00–20:00（L.O. 19:30）<br>
+      定休日：火曜ディナー・水曜
+    </div>
+    <p class="footer-copy">&copy; 2026 BURGER HOUSE. ALL RIGHTS RESERVED.</p>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click',()=>{ document.getElementById('mainNav').classList.toggle('open'); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') document.getElementById('lightbox').style.display='none'; });
+  </script>
+</body>
+</html>
